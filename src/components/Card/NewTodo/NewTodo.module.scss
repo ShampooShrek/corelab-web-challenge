@@ -1,11 +1,11 @@
 @import "@/styles/variables.scss";
 @import "@/styles/break-points.scss";
-@import "@/styles/colors.scss";
 
 .container {
   width: 100%;
-  height: $card-height;
+  max-height: 438px;
   border-radius: $card-radius;
+  box-shadow: $card-shadow;
   background-color: $card-bg;
   color: $card-text-color;
 
@@ -13,19 +13,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    max-height: 438px;
 
     svg {
       cursor: pointer;
       width: $card-icon-width;
       height: $card-icon-height;
     }
+  }
 
+
+  @include laptop {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+
+  @include desktop {
+    width: 40%;
+    border-radius: 5px;
+    border: 1px solid $card-default-line-color;
   }
 }
-
-.favorite {
-  box-shadow: $card-shadow;
-}
-
-@include colors;
